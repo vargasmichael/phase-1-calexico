@@ -28,7 +28,7 @@ const price = document.querySelector('#dish-price');
                 populateMenuItems(item)
             } )
         })
-    } console.log(menu)
+    } //console.log(menu)
 
     function populateMenuItems(food){
        image.src = food.image;
@@ -36,6 +36,17 @@ const price = document.querySelector('#dish-price');
        description.innerText = food.description;
        price.innerText = food.price;
     }
+    
+const cartForm = document.querySelector('#cart-form');
+const bag = document.querySelector('#number-in-cart');
+// const cart = document.querySelector('#cart-amount');
+
+cartForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const input = parseInt(event.target[0].value)
+    bag.innerText = input + parseInt(bag.innerText);
+    console.log(event.target[0].value);
+})
 
     
 
